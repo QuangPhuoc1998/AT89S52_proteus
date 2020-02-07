@@ -1,0 +1,4 @@
+"UART.obj",
+".\delay.obj" 
+TO "UART" 
+RAMSIZE(256) 

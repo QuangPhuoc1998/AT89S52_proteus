@@ -1,0 +1,109 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/02/2018  00:00:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL C\C51\BIN\BL51.EXE UART.obj, .\delay.obj TO UART RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  UART.obj (UART)
+  .\delay.obj (DELAY)
+  D:\KEIL C\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  UART (UART)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0023H     0012H     UNIT         ?PR?MAIN?UART
+            CODE    0035H     000CH     UNIT         ?PR?_UART_MODE0_WRITE?UART
+            CODE    0041H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   UART (UART)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?UART
+
+?PR?MAIN?UART
+  +--> ?PR?_UART_MODE0_WRITE?UART
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  UART (UART)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0035H         PUBLIC        _UART_mode0_write
+  B:00B0H.2       PUBLIC        P3_2
+  B:0098H.1       PUBLIC        TI
+  C:0023H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/02/2018  00:00:06  PAGE 2
+
+
+  D:0099H         PUBLIC        SBUF
+  B:0098H.7       PUBLIC        SM0
+  B:0098H.6       PUBLIC        SM1
+  -------         PROC          _UART_MODE0_WRITE
+  D:0007H         SYMBOL        a
+  C:0035H         LINE#         3
+  C:0035H         LINE#         4
+  C:0035H         LINE#         5
+  C:0037H         LINE#         6
+  C:003AH         LINE#         7
+  C:003CH         LINE#         8
+  C:003EH         LINE#         9
+  C:0040H         LINE#         10
+  -------         ENDPROC       _UART_MODE0_WRITE
+  -------         PROC          MAIN
+  C:0023H         LINE#         12
+  C:0023H         LINE#         13
+  C:0023H         LINE#         14
+  C:0027H         LINE#         15
+  C:002CH         LINE#         16
+  C:002CH         LINE#         17
+  C:002CH         LINE#         18
+  C:0033H         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        UART
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         5
+  C:000DH         LINE#         6
+  C:0022H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+Program Size: data=9.0 xdata=0 code=77
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
